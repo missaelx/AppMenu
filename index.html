@@ -274,41 +274,49 @@ html{
     });
 
     //*******************************prog 4
-    $("#Prog4Num1").keyup(function(event) {
-        if (event.keyCode != '48' && event.keyCode != '49' && event.keyCode != '50' && event.keyCode != '51' && event.keyCode != '52' && event.keyCode != '53' && event.keyCode != '54' && event.keyCode != '55' && event.keyCode != '56' && event.keyCode != '57')
-        {
-            alert("Solo numeros!!!")
-        }
-    });
+    
+    
     $("#Prog4Ejec").click(function(){
-        var resultado = parseInt($("#Prog4Num1").val()) * parseInt($("#Prog4Num2").val());
+        var num1 = $("#Prog4Num1").val();
+        var num2 = $("#Prog4Num2").val();
+        if(isNaN(num1) || isNaN(num2)){
+            alert("solo numeros");
+            return false;
+        }
+        var resultado = parseFloat($("#Prog4Num1").val()) * parseFloat($("#Prog4Num2").val());
         $("#Prog4Resul").val(resultado);
     })
 
     //*******************************prog 5
     $("#Prog5Ejec").click(function(){
-        console.log($("#Prog5Suma").attr( "checked" ));
+        var num1 = $("#Prog5Num1").val();
+        var num2 = $("#Prog5Num2").val();
+        if(isNaN(num1) || isNaN(num2)){
+            alert("solo numeros");
+            return false;
+        }
 
         if($("#Prog5Suma").attr( "checked" )){
-            var resultado = parseInt($("#Prog5Num1").val()) + parseInt($("#Prog5Num2").val());
+            var resultado = parseFloat($("#Prog5Num1").val()) + parseFloat($("#Prog5Num2").val());
         }else{
-            var resultado = parseInt($("#Prog5Num1").val()) - parseInt($("#Prog5Num2").val());
+            var resultado = parseFloat($("#Prog5Num1").val()) - parseFloat($("#Prog5Num2").val());
         }
         $("#Prog5Resul").val(resultado);
     });
 
 
     //*******************************prog 6
-    $("#Prog6Num1").keyup(function(event) {
-        if (event.keyCode != '48' && event.keyCode != '49' && event.keyCode != '50' && event.keyCode != '51' && event.keyCode != '52' && event.keyCode != '53' && event.keyCode != '54' && event.keyCode != '55' && event.keyCode != '56' && event.keyCode != '57')
-        {
-            alert("Solo numeros!!!")
-        }
-    });
+
     $("#Prog6Ejec").click(function(){
+        var num1 = $("#Prog6Num1").val();
+        var num2 = $("#Prog6Num2").val();
+        if(isNaN(num1) || isNaN(num2)){
+            alert("solo numeros");
+            return false;
+        }
         var x, y, r = 1;
-        x = parseInt($("#Prog6Num1").val());
-        y = parseInt($("#Prog6Num2").val());
+        x = parseFloat($("#Prog6Num1").val());
+        y = parseFloat($("#Prog6Num2").val());
         for (i = 1; i <= y; i++){
             r = r * x;
         }
